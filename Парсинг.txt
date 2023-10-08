@@ -1,0 +1,13 @@
+from bs4 import BeautifulSoup
+import requests
+
+url = 'https://saint-petersburg.ru/'
+
+response = requests.get(url)
+print(response)
+
+bs = BeautifulSoup(response.text,"lxml")
+print(bs)
+
+temp = bs.find('center')
+print(temp)
